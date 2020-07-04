@@ -42,10 +42,11 @@ class _BallPageState extends State<Ball> {
     return Center(
       child: FlatButton(
         onPressed: () {
-          ballNumber = Random().nextInt(5);
-          print(ballNumber);
+          setState(() {
+            ballNumber = Random().nextInt(5) + 1;
+          });
         },
-        child: Image.asset('images/ball1.png'),
+        child: Image.asset('images/ball$ballNumber.png'),
       ),
     );
   }
